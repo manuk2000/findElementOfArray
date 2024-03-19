@@ -10,10 +10,10 @@ function calculation(l, r, target, arr) {
         return mid;
     }
 
-
-    //d
-    if (arr[mid] > arr[mid + 1]) {// decreasing place of array
-        if (arr[mid] > target) { // call right
+    // decreasing place of array
+    if (arr[mid] > arr[mid + 1]) {
+        // call right
+        if (arr[mid] > target) { 
             let tmp = calculation(mid + 1, r, target, arr);
             if (tmp !== -1) {
                 return tmp;
@@ -21,8 +21,10 @@ function calculation(l, r, target, arr) {
         }
         r = mid - 1;
 
-    } else {// increasing place of array
-        if (arr[mid] > target) {// call left
+    // increasing place of array
+    } else {
+        // call left
+        if (arr[mid] > target) {
             let tmp = calculation(l, mid - 1, target, arr);
             if (tmp !== -1) {
                 return tmp;
@@ -31,7 +33,8 @@ function calculation(l, r, target, arr) {
         l = mid + 1;
 
     }
-    return calculation(l, r, target, arr);// call to hire place
+    // call to hire place
+    return calculation(l, r, target, arr);
 }
 
 
